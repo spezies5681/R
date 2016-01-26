@@ -5,7 +5,7 @@ pairs(~Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, data=iris)
 iris_copy <- iris
 
 # 1. Add a column to the dataset with the 1/0 label
-iris_copy$member <- isris$Species == "sentana"
+iris_copy$member <- (iris$Species == "sentana")
 
 # 2. Make test and control sets.
 set.seed(42)
@@ -18,7 +18,7 @@ a <- glm(formula = Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.W
 
 # 4. add a column for the probabilities to all the data (the one you made in step 0.5)
 prob <- predict(a, type = c("response"))
-iris_copy$member <- prob
+iris_copy$probability <- prob
 
 # 5. Plot and interpret the ROC curve
 plot(a)
