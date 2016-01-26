@@ -17,7 +17,11 @@ training_set <- iris[control_set, ]
 a <- glm(formula = Species ~ Sepal.Length + Sepal.Width + Petal.Length + Petal.Width, family = binomial, data = training_set)
 
 # 4. add a column for the probabilities to all the data (the one you made in step 0.5)
+prob = predict(a, type = c("response"))
+iris_copy$member <- prob
 
 # 5. Plot and interpret the ROC curve
+plot(a)
+
 
 
