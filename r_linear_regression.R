@@ -31,6 +31,8 @@ for (i in list(training_set$Petal.Width,
   plots_against_humanity(i)
 }
 # 4. evaluate on test set
+mdlEval <- lm(formula = Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = test_set)
+
 # 5. see if predictions are less good on test set. 
 
 #For tomorrow (1 hour)
