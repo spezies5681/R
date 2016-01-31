@@ -1,2 +1,2 @@
 # R
-learning R - practical exercises
+Basic R data processing training
